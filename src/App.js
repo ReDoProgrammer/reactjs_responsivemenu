@@ -1,16 +1,22 @@
 import './App.css';
 import { Menu, Drawer } from 'antd';
 import { useState } from 'react';
-
+import { MenuOutlined } from '@ant-design/icons';
 function App() {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <div style={{ height: '100vh', backgroundColor: "rgb(0,150,255)" }}>
+      <div style={{ backgroundColor: "white", padding: "12px 0 0 12px", fontSize: 18 }}>
+        <MenuOutlined onClick={() => {
+          setOpenMenu(true);
+        }} />
+      </div>
       <Navbar />
       <Drawer
+        placement='left'
         open={openMenu}
         onClose={() => {
-          setOpenMenu(true);
+          setOpenMenu(false);
         }}
         closable={false}
         style={{ border: "none" }}
