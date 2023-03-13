@@ -9,9 +9,11 @@ function App() {
       <div style={{ backgroundColor: "white", padding: "12px 0 0 12px", fontSize: 18 }}>
         <MenuOutlined onClick={() => {
           setOpenMenu(true);
-        }} />
+        }} className="resMenu"/>
       </div>
-      <Navbar />
+      <span className='navBar'>
+        <Navbar />
+      </span>
       <Drawer
         placement='left'
         open={openMenu}
